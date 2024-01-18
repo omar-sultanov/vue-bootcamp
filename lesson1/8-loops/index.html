@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .completedItem{
+            background-color: rgb(134, 164, 221);
+        }
+        .uncompletedItem{
+            background-color: rgb(130, 153, 95);
+        }
+        .completedItemText{
+            color: rgb(134, 164, 221);
+        }
+        .uncompletedItemText{
+            color: rgb(130, 153, 95);
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="row d-flex justify-content-center">
+           <div class="col-5">
+            <input class="w-100 my-3" type="text" @keydown.enter="addNewItem">
+            <ul class="list-group">
+                <li v-for="todo in todoList" ::key="todo.id" :class="{'completedItem':todo.completed, 'uncompletedItem':!todo.completed}" class="list-group-item  d-flex justify-content-between">
+                    <div class="m-2">
+                        <input class="form-check-input mx-1" type="checkbox" v-model="todo.completed" :id="todo.id" :completed="todo.comleted">
+                        <label class="form-check-label" :for="todo.id">
+                            <b><i>{{todo.text}}</i></b>
+                        </label>
+                    </div>
+                    <button class="btn btn-danger" @click="removeItem(todo.id)">Delete</button>
+                </li>
+              </ul>
+              <div class="d-flex justify-content-between">
+                <h6 class="completedItemText">Completed: {{completedAmount}}</h3>
+                <h6 class="uncompletedItemText">UnCompleted: {{unCompletedAmount}}</h3>
+              </div>
+              <div>
+            </div>
+           </div>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>

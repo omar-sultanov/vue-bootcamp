@@ -1,0 +1,13 @@
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+ 
+}
+.red{
+    background-color: tomato;
+}
+
+.bord{
+    border: 10px dashed #666;
+}

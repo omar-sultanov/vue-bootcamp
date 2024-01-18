@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul id="list">
+            <li v-for="todo in todoList" :key="todo">{{todo}}</li>
+         </ul>
+         <div>
+             <input v-model="todoText" id="newText" type="text" placeholder="add new list">
+             <button id="btn" @click="addTodo">add</button>
+         </div>
+    </div>
+   
+<script src="./app.js"></script>
+</body>
+</html>
