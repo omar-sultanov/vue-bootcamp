@@ -28,9 +28,9 @@
            <div class="col-5">
             <input class="w-100 my-3" type="text" @keydown.enter="addNewItem">
             <ul class="list-group">
-                <li v-for="todo in todoList" ::key="todo.id" :class="{'completedItem':todo.completed, 'uncompletedItem':!todo.completed}" class="list-group-item  d-flex justify-content-between">
+                <li v-for="todo in todoList" :key="todo.id" :class="{'completedItem':todo.completed, 'uncompletedItem':!todo.completed}" class="list-group-item  d-flex justify-content-between">
                     <div class="m-2">
-                        <input class="form-check-input mx-1" type="checkbox" v-model="todo.completed" :id="todo.id" :completed="todo.comleted">
+                        <input class="form-check-input mx-1" type="checkbox" v-model="todo.completed" :id="todo.id" :completed="todo.completed">
                         <label class="form-check-label" :for="todo.id">
                             <b><i>{{todo.text}}</i></b>
                         </label>
