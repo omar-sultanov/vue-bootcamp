@@ -2,11 +2,11 @@
   <div>
     <ul class="list-group my-4">
       <li
-        v-for="todoItem in itemList"
+        v-for="todoItem in provideData.todoList"
         :key="todoItem.id"
         class="list-group-item list-group-item-dark my-1"
       >
-        <TodoItem :item="todoItem" @delete-todo-item="$emit('delete-todo-item',$event)"/>
+        <TodoItem :item="todoItem"/>
       </li>
     </ul>
   </div>
@@ -14,7 +14,8 @@
 <script>
 import TodoItem from './TodoItem.vue';
 export default {
+  inject:["provideData"],
   components: { TodoItem },
-  props: ['itemList'],
+  // props: ['itemList'],
 };
 </script>

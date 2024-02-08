@@ -1,10 +1,11 @@
 <template>
     <div>
-        <p>amount of items: {{ itemList.length }}</p>
+        <p>amount of items: {{ provideData.todoList.length }}</p>
     </div>
 </template>
 <script>
     export default{
-        props:["itemList"]
+        inject:["provideData"]
+        // props:["itemList"]
     }
 </script>
