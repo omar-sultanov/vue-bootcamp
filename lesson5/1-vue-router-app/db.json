@@ -1,0 +1,16 @@
+{
+  "bookmarks": [
+    {
+      "title": "Bootcamp",
+      "link": "vue.js.com",
+      "description": "message",
+      "id": 1
+    },
+    {
+      "title": "Bootcamp",
+      "link": "vue.js.com",
+      "description": "message",
+      "id": 8
+    }
+  ]
+}
